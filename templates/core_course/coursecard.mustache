@@ -60,6 +60,9 @@
                 </div>
             {{/visible}}
             <div class="d-flex align-items-start">
+
+<div id="course_teachers_{{id}}" class="course_teachers"></div>
+
                 <div class="w-100">
                     {{#showshortname}}
                         <div class="rui-course-card-shortname flex-wrap">
@@ -88,3 +91,18 @@
     </div>
     {{$progress}}{{/progress}}
 </div>
+
+{{#js}}
+require(
+[
+    'jquery',
+    'theme_alpha/coursecard',
+],
+function(
+    $,
+    Main
+) {
+    var root = $('#course_teachers_{{id}}');
+    Main.init(root, {{id}});
+});
+{{/js}}

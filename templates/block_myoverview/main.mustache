@@ -23,6 +23,26 @@
     {}
 }}
 
+<div style="display: none">
+    <br>    --------------------------------------------------------    <br>
+    {{#teachersList}}
+        <div id="course_teacher_{{id}}" class="course_teacher">
+            {{#cursos}}
+                <div id="courseId-{{courseId}}-teachers">
+                    <div class="rui-card-course-contacts">
+                        {{#courseListTeachers}}
+                            <a href="{{config.wwwroot}}/user/profile.php?id={{{id}}}" class="rui-tooltip rui-card-contact rui-user-{{{role}}}" data-title="{{{fullname}}} - {{{role}}}">
+                                <img src="{{{userpicture}}}" class="rui-card-avatar" alt="{{{fullname}}}" />
+                            </a>
+                        {{/courseListTeachers}}
+                    </div>
+                </div>
+            {{/cursos}}
+        </div>
+    {{/teachersList}}
+    <br>    --------------------------------------------------------    <br>
+</div>
+
 <div id="block-myoverview-{{uniqid}}" class="block-myoverview block-cards" data-region="myoverview" role="navigation">
 
     <div data-region="filter" class="d-flex align-items-center flex-wrap" aria-label="{{#str}} aria:controls, block_myoverview {{/str}}">
